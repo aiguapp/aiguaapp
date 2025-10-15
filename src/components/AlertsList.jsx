@@ -9,6 +9,8 @@ export function AlertsList({ anomalies }) {
         return <Droplets className="w-5 h-5 text-red-500" />;
       case 'drop':
         return <TrendingDown className="w-5 h-5 text-yellow-500" />;
+      default:
+        return <AlertTriangle className="w-5 h-5 text-gray-500" />;
     }
   };
 
@@ -20,18 +22,30 @@ export function AlertsList({ anomalies }) {
         return 'bg-orange-100 border-orange-300 text-orange-800';
       case 'low':
         return 'bg-yellow-100 border-yellow-300 text-yellow-800';
+      default:
+        return 'bg-gray-100 border-gray-300 text-gray-800';
     }
   };
 
   const getTypeLabel = (type) => {
     switch (type) {
       case 'spike':
-        return 'Bec de Consum';
+        return 'Pic de Consum';
       case 'leak':
-        return 'Possible escapada';
+        return 'Possible Escapada';
       case 'drop':
-        return 'Queda Abrupta';
+        return 'Caiguda Abrupta';
+      default:
+        return 'Anomalia';
     }
+  };
+
+  // Función para formatear la desviación (puede venir como string "+18" o número 18)
+  const formatDeviation = (deviation) => {
+    if (typeof deviation === 'string') {
+      return deviation; // Ya viene con signo
+    }
+    return deviation > 0 ? `+${deviation}` : `${deviation}`;
   };
 
   return (
@@ -48,24 +62,37 @@ export function AlertsList({ anomalies }) {
           {anomalies.map((anomaly) => (
             <div
               key={anomaly.id}
-              className={`border-2 rounded-lg p-4 ${getSeverityColor(anomaly.severity)}`}
+              className={`border-2 rounded-lg p-4 transition-all hover:shadow-md ${getSeverityColor(anomaly.severity)}`}
             >
               <div className="flex items-start gap-3">
                 {getIcon(anomaly.type)}
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="font-semibold">{anomaly.neighborhood}</h3>
-                    <span className="text-xs font-medium uppercase">
+                    <span className="text-xs font-medium uppercase px-2 py-1 rounded-full bg-white bg-opacity-50">
                       {anomaly.severity}
                     </span>
                   </div>
-                  <p className="text-sm mb-2">{getTypeLabel(anomaly.type)}</p>
+                  <p className="text-sm mb-2 font-medium">{getTypeLabel(anomaly.type)}</p>
                   <div className="flex items-center justify-between text-sm">
-                    <span>Consumo: {anomaly.liters}L</span>
-                    <span>Desvio: {anomaly.deviation > 0 ? '+' : ''}{anomaly.deviation}%</span>
+                    <span className="font-medium">💧 {anomaly.liters}L</span>
+                    <span className={`font-bold ${
+                      (typeof anomaly.deviation === 'string' && anomaly.deviation.startsWith('+')) || 
+                      (typeof anomaly.deviation === 'number' && anomaly.deviation > 0)
+                        ? 'text-red-700' 
+                        : 'text-green-700'
+                    }`}>
+                      📊 {formatDeviation(anomaly.deviation)}%
+                    </span>
                   </div>
                   <p className="text-xs mt-2 opacity-75">
-                    {new Date(anomaly.timestamp).toLocaleString('pt-PT')}
+                    🕒 {new Date(anomaly.timestamp).toLocaleString('ca-ES', {
+                      day: '2-digit',
+                      month: '2-digit',
+                      year: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    })}
                   </p>
                 </div>
               </div>
