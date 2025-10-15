@@ -26,9 +26,9 @@ export function AlertsList({ anomalies }) {
   const getTypeLabel = (type) => {
     switch (type) {
       case 'spike':
-        return 'Pico de Consumo';
+        return 'Bec de Consum';
       case 'leak':
-        return 'Possível Fuga';
+        return 'Possible escapada';
       case 'drop':
         return 'Queda Abrupta';
     }

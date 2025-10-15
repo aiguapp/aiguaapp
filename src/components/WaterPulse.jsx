@@ -28,7 +28,7 @@ export function WaterPulse({ data }) {
         >
           {neighborhoods.map(n => (
             <option key={n} value={n}>
-              {n === 'all' ? 'Todos os Bairros' : n}
+              {n === 'all' ? 'Tots els barris' : n}
             </option>
           ))}
         </select>

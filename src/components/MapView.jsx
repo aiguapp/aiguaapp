@@ -31,7 +31,7 @@ export function MapView({ incidents = [] }) {
     { neighborhood: "Nou Barris", lastReading: 110.4, deviation: 15, status: "critical" },
   ];
 
-  const data = incidents.length ? incidents : defaultIncidents;
+  const data = defaultIncidents;  
 
   const mapRef = useRef(null);
   const mapDivRef = useRef(null);
