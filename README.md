@@ -1,6 +1,5 @@
-# 💧 AiguaBeat — Gestió sostenible dels recursos hídrics a Catalunya
+# ![Logo del projecte](./src/assets/logo.png) AiguaBeat — Gestió sostenible dels recursos hídrics a Catalunya
 
-![Logo del projecte](./src/assets/logo.png)
 
 ---
 
