@@ -15,11 +15,13 @@
 > - Thresholds pròpies (per ex. +15% respecte a la mitjana setmanal)
 > - Horaris crítics (fugues de nit, pics d'hora punta)
 
-### Estado: ✅ **PARCIALMENTE IMPLEMENTADO (70%)**
+### Estado: ✅ **COMPLETAMENTE IMPLEMENTADO (100%)**
+
+**Fecha de implementación**: 15/10/2025
 
 #### ✅ **LO QUE ESTÁ:**
 
-**Archivo**: `src/pages/ConfiguracionPage.jsx`
+**Archivos**: `src/hooks/useThreshold.js` (nuevo), `src/components/AlertsList.jsx`, `src/pages/ConfiguracionPage.jsx`
 
 1. **UI de Configuración Completa**:
    ```jsx
@@ -530,13 +532,13 @@ npm install aws-sdk  # Para AWS SES
 
 | # | Funcionalidad | Estado | % Completado | Prioridad |
 |---|---------------|--------|--------------|-----------|
-| 1 | **Alertes Personalitzades** | ⚠️ Parcial | **70%** | 🔴 Alta |
-| 2 | **Informe Històric** | ⚠️ Parcial | **40%** | 🟡 Media |
+| 1 | **Alertes Personalitzades** | ✅ Completo | **100%** | ✅ Completa |
+| 2 | **Informe Històric** | ✅ Completo | **100%** | ✅ Completa |
 | 3 | **Contextualització Meteorològica** | ❌ No implementado | **0%** | 🟢 Baja |
 | 4 | **Mapa d'Incidències** | ✅ Completo | **100%** | ✅ Completa |
 | 5 | **Alertes via Email** | ❌ No implementado | **0%** | 🔴 Alta |
 
-### **PUNTUACIÓN GLOBAL: 42%**
+### **PUNTUACIÓN GLOBAL: 60%** ⬆️ (antes: 42%)
 
 ---
 
