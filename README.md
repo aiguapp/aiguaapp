@@ -139,6 +139,44 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 
 ## ⚙️ Instal·lació i execució
 
+### 1. Instal·lar dependències
+```bash
 npm install
+```
+
+### 2. Configurar l'API
+
+Crea un fitxer `.env` a l'arrel del projecte:
+
+```env
+# URL base de la API real
+VITE_API_URL=https://repteweb-backend.onrender.com
+```
+
+**Nota:** L'aplicació utilitza exclusivament dades reals del backend.
+
+### 3. Executar l'aplicació
+
+```bash
+# Modo desenvolupament
 npm run dev
+
+# Compilar per producció
 npm run build
+```
+
+---
+
+## 🔌 API Endpoints
+
+L'aplicació consumeix els següents endpoints:
+
+| Endpoint | Mètode | Descripció |
+|----------|--------|------------|
+| `/consumption/summary` | GET | Resum del consum d'aigua per barri |
+| `/consumption/` | GET | Llistat de consums/incidents |
+| `/anomalies/` | GET | Anomalies detectades al sistema |
+
+**Documentació completa:** Veure [API_CONFIG.md](./API_CONFIG.md)
+
+---
