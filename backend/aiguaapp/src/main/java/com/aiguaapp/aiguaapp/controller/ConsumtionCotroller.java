@@ -9,15 +9,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+
 @CrossOrigin
 @RestController
-@RequestMapping("/anomalies")
-public class AnomaliesController {
+@RequestMapping("/consumption")
+public class ConsumtionCotroller {
 	@GetMapping("/")
 	public String get_anomalies()
 	{
         try {
-            Path filePath = Path.of("src/main/resources/dataJson/anomalies.json");
+            Path filePath = Path.of("src/main/resources/dataJson/consumption.json");
             String jsonString = Files.readString(filePath);
 			return jsonString;
 		} catch (IOException e) {
