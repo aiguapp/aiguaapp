@@ -61,7 +61,7 @@ export function Dashboard() {
             <div className="flex items-center gap-3">
               <Droplets className="w-8 h-8 text-blue-600" />
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">AquaBeat</h1>
+                <h1 className="text-2xl font-bold text-gray-900">Aiguamap</h1>
                 <p className="text-sm text-gray-600">Monitorització intel·ligent de l'aigua</p>
               </div>
             </div>
