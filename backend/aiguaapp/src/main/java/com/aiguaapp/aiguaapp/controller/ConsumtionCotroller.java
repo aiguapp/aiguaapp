@@ -26,4 +26,18 @@ public class ConsumtionCotroller {
 			return "Error fetching data";
         }
 	}
+
+	@GetMapping("/summary")
+	public String get_summary()
+	{
+        try {
+            Path filePath = Path.of("src/main/resources/dataJson/summary.json");
+            String jsonString = Files.readString(filePath);
+			return jsonString;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Error fetching data";
+        }
+	}
+
 }
