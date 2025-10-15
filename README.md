@@ -62,16 +62,13 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 │   │   └── WaterPulse.jsx         
 │   │
 │   ├── 📁 services/               
-│   │   └── api.js                
-│   │
-│   ├── 📁 data/                   
-│   │   ├── summary.json           
-│   │   └── consumption.json       
+│   │   └── api.js                 # Consumo de API REST real
 │   │
 │   ├── App.jsx                    
 │   ├── main.jsx                   
 │   └── index.css                  
 │
+├── .env                           # Configuración de la API
 ├── package.json                  
 └── README.md                     
 
@@ -86,8 +83,8 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 | Estils | **Tailwind CSS** | Disseny responsive i personalitzable |
 | Mapa | **Leaflet.js** | Visualització geogràfica de barris i anomalies |
 | Icons | **Lucide-react** | Iconografia moderna i vectorial |
-| Dades | **JSON-server / Mock API** | Simulació de backend amb dades reals o falses |
-| Visuals | **Chart.js (opcional)** | Gràfics per a informes i estadístiques |
+| Backend API | **REST API** | Consum de dades reals del backend |
+| Actualització | **Auto-refresh** | Dades actualitzades cada 30 segons |
 
 ---
 
@@ -117,10 +114,10 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 
 | Font | Descripció |
 |------|-------------|
-| `summary.json` | Resum del consum total per barri i tipus d’ús |
-| `consumption.json` | Registre horari amb anomalies simulades (fugues, pics, etc.) |
-| `AEMET` (simulada) | Dades de pluja i temperatura |
-| `ACA` / `Aigües de Barcelona` | Dades reals potencials per a futur |
+| **API Backend** | Dades reals del backend en temps real |
+| `/consumption/summary` | Resum del consum per barri amb anomalies |
+| `/anomalies/` | Llistat d'anomalies detectades |
+| `/consumption/` | Registres de consums i incidents |
 
 ---
 
@@ -134,7 +131,9 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 
 🧩 Lucide-react — Icones modernes i minimalistes
 
-💾 JSON-server — Simulació del backend amb dades locals
+🌐 REST API — Consum de dades reals del backend
+
+---
 
 
 ## ⚙️ Instal·lació i execució
