@@ -1,25 +1,65 @@
-import { Settings, Save } from 'lucide-react';
+import { Settings, Save, Info } from 'lucide-react';
 import { useState } from 'react';
+import { useData } from '../context/DataContext';
+import { useThreshold } from '../hooks/useThreshold';
 
 export function ConfiguracionPage() {
-  const [config, setConfig] = useState({
-    threshold: 15,
-    criticalHoursStart: '00:00',
-    criticalHoursEnd: '06:00',
-    notifications: true,
-    darkMode: false
+  const { anomalies } = useData();
+  const { getStats } = useThreshold();
+  
+  const [config, setConfig] = useState(() => {
+    try {
+      const stored = localStorage.getItem('aiguaapp-config');
+      return stored ? JSON.parse(stored) : {
+        threshold: 15,
+        criticalHoursStart: '00:00',
+        criticalHoursEnd: '06:00',
+        notifications: true,
+        darkMode: false
+      };
+    } catch {
+      return {
+        threshold: 15,
+        criticalHoursStart: '00:00',
+        criticalHoursEnd: '06:00',
+        notifications: true,
+        darkMode: false
+      };
+    }
   });
+
+  // Calcular estadísticas en tiempo real según threshold actual
+  const previewStats = (() => {
+    if (!anomalies || anomalies.length === 0) return null;
+    
+    const filtered = anomalies.filter(a => {
+      let deviationValue;
+      if (typeof a.deviation === 'string') {
+        deviationValue = Math.abs(parseFloat(a.deviation.replace('+', '')));
+      } else {
+        deviationValue = Math.abs(a.deviation);
+      }
+      return deviationValue >= config.threshold;
+    });
+    
+    return {
+      total: anomalies.length,
+      filtered: filtered.length,
+      filteredOut: anomalies.length - filtered.length
+    };
+  })();
 
   const handleSave = () => {
     localStorage.setItem('aiguaapp-config', JSON.stringify(config));
-    alert('Configuració guardada correctament');
+    // Recargar la página para aplicar cambios en todos los componentes
+    window.location.reload();
   };
 
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <div className="flex items-center gap-3">
-          <Settings className="w-8 h-8 text-blue-600" />
+          <Settings className="w-8 h-8 text-sky-600" />
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Configuració</h1>
             <p className="text-gray-600 mt-1">Personalitza els paràmetres de l'aplicació</p>
@@ -43,7 +83,7 @@ export function ConfiguracionPage() {
           />
           <div className="flex justify-between text-sm text-gray-600 mt-1">
             <span>5%</span>
-            <span className="font-semibold text-blue-600">{config.threshold}%</span>
+            <span className="font-semibold text-sky-600">{config.threshold}%</span>
             <span>30%</span>
           </div>
           <p className="text-sm text-gray-500 mt-2">
@@ -94,7 +134,7 @@ export function ConfiguracionPage() {
           <button
             onClick={() => setConfig({ ...config, notifications: !config.notifications })}
             className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-              config.notifications ? 'bg-blue-600' : 'bg-gray-300'
+              config.notifications ? 'bg-sky-600' : 'bg-gray-300'
             }`}
           >
             <span
@@ -118,7 +158,7 @@ export function ConfiguracionPage() {
           <button
             onClick={() => setConfig({ ...config, darkMode: !config.darkMode })}
             className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-              config.darkMode ? 'bg-blue-600' : 'bg-gray-300'
+              config.darkMode ? 'bg-sky-600' : 'bg-gray-300'
             }`}
           >
             <span
@@ -129,15 +169,50 @@ export function ConfiguracionPage() {
           </button>
         </div>
 
+        {/* Panel de información con preview de estadísticas */}
+        {previewStats && (
+          <div className="bg-sky-50 border-2 border-sky-200 rounded-lg p-4">
+            <div className="flex items-start gap-3">
+              <Info className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <h4 className="font-semibold text-sky-900 mb-2">
+                  Impacte del Llindar Actual
+                </h4>
+                <div className="space-y-2 text-sm text-sky-800">
+                  <p>
+                    Amb un llindar de <strong>{config.threshold}%</strong>:
+                  </p>
+                  <ul className="list-disc list-inside space-y-1 ml-2">
+                    <li>
+                      <strong>{previewStats.filtered}</strong> anomalies es mostraran
+                    </li>
+                    {previewStats.filteredOut > 0 && (
+                      <li className="text-sky-700">
+                        <strong>{previewStats.filteredOut}</strong> anomalies s'ocultaran (desviació &lt;{config.threshold}%)
+                      </li>
+                    )}
+                  </ul>
+                  <p className="text-xs text-sky-600 mt-2">
+                    💡 Un llindar més alt mostra menys alertes però més crítiques
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Botón guardar */}
         <div className="pt-4 border-t border-gray-200">
           <button
             onClick={handleSave}
-            className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors shadow-sm"
           >
             <Save className="w-5 h-5" />
-            Guardar Configuració
+            Guardar i Aplicar Configuració
           </button>
+          <p className="text-xs text-center text-gray-500 mt-2">
+            La pàgina es recarregarà per aplicar els canvis
+          </p>
         </div>
       </div>
     </div>

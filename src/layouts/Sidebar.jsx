@@ -20,8 +20,8 @@ export function Sidebar() {
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 isActive
-                  ? 'bg-blue-50 text-blue-600 font-medium'
-                  : 'text-gray-700 hover:bg-gray-50'
+                  ? 'bg-sky-50 text-sky-700 font-medium border-l-4 border-sky-600'
+                  : 'text-gray-700 hover:bg-sky-50 hover:text-sky-600'
               }`
             }
           >

@@ -61,14 +61,14 @@ export function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
                   onClick={() => navigate('/dashboard')}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 hover:scale-105 transform transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-sky-600 text-white font-semibold rounded-xl shadow-lg hover:bg-sky-700 hover:scale-105 transform transition-all"
                 >
                   Començar
                   <ArrowRight className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => navigate('/mapa')}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all border-2 border-blue-600"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-sky-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all border-2 border-sky-600"
                 >
                   Veure Mapa
                 </button>

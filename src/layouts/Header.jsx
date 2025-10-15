@@ -9,7 +9,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Droplets className="w-8 h-8 text-blue-600" />
+            <Droplets className="w-8 h-8 text-sky-600" />
             <div>
               <h1 className="text-2xl font-bold text-gray-900">AiguaApp</h1>
               <p className="text-sm text-gray-600">Monitorització Intel·ligent de l'Aigua</p>
@@ -26,7 +26,7 @@ export function Header() {
             <button
               onClick={refreshData}
               disabled={loading}
-              className="p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="p-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm"
               title="Actualizar datos"
             >
               <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : ''}`} />
