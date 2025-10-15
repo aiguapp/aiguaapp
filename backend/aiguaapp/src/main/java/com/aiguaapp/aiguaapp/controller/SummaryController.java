@@ -12,13 +12,13 @@ import java.nio.file.Path;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/consumption")
-public class ConsumtionCotroller {
+@RequestMapping("/summary")
+public class SummaryController {
 	@GetMapping("/")
-	public String get_consumption()
+	public String get_summary()
 	{
         try {
-            Path filePath = Path.of("src/main/resources/dataJson/consumption.json");
+            Path filePath = Path.of("src/main/resources/dataJson/summary.json");
             String jsonString = Files.readString(filePath);
 			return jsonString;
 		} catch (IOException e) {
