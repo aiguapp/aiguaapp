@@ -17,9 +17,9 @@ export function MapView({ incidents }) {
       case 'normal':
         return 'Normal';
       case 'warning':
-        return 'Atenção';
+        return 'Atenció';
       case 'critical':
-        return 'Crítico';
+        return 'Crític';
     }
   };
 
@@ -34,7 +34,7 @@ export function MapView({ incidents }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Mapa de Cataluña</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-4">Mapa de Barcelona</h2>
 
       <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg h-96 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -57,8 +57,8 @@ export function MapView({ incidents }) {
 
               <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs rounded px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
                 <p className="font-semibold">{incident.neighborhood}</p>
-                <p>Estado: {getStatusLabel(incident.status)}</p>
-                <p>Consumo: {incident.lastReading}L</p>
+                <p>Estat: {getStatusLabel(incident.status)}</p>
+                <p>Consum: {incident.lastReading}L</p>
                 {incident.deviation !== 0 && (
                   <p className="text-yellow-300">
                     Desvio: {incident.deviation > 0 ? '+' : ''}{incident.deviation}%
@@ -77,11 +77,11 @@ export function MapView({ incidents }) {
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
-          <span className="text-gray-600">Atenção</span>
+          <span className="text-gray-600">Atenció</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-          <span className="text-gray-600">Crítico</span>
+          <span className="text-gray-600">Crític</span>
         </div>
       </div>
     </div>

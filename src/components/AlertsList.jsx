@@ -36,12 +36,12 @@ export function AlertsList({ anomalies }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Alertas Recentes</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-4">Alertes Recents</h2>
 
       {anomalies.length === 0 ? (
         <div className="text-center py-8 text-gray-500">
           <Droplets className="w-12 h-12 mx-auto mb-2 opacity-30" />
-          <p>Nenhuma anomalia detectada</p>
+          <p>No s'han detectat anomalies</p>
         </div>
       ) : (
         <div className="space-y-3 max-h-96 overflow-y-auto">

@@ -29,7 +29,7 @@ export function Dashboard() {
       setIncidents(incidentsData);
       setLastUpdate(new Date());
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Erro ao carregar dados');
+      setError(err instanceof Error ? err.message : 'Error en carregar les dades');
       console.error('Error fetching data:', err);
     } finally {
       setLoading(false);
@@ -47,7 +47,7 @@ export function Dashboard() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
         <div className="text-center">
           <RefreshCw className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
-          <p className="text-gray-600">A carregar dados...</p>
+          <p className="text-gray-600">S'estan carregant les dades...</p>
         </div>
       </div>
     );
@@ -62,13 +62,13 @@ export function Dashboard() {
               <Droplets className="w-8 h-8 text-blue-600" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">AquaBeat</h1>
-                <p className="text-sm text-gray-600">Monitorização Inteligente de Água</p>
+                <p className="text-sm text-gray-600">Monitorització intel·ligent de l'aigua</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="text-right text-sm">
-                <p className="text-gray-600">Última atualização</p>
+                <p className="text-gray-600">Última actualització</p>
                 <p className="font-medium text-gray-900">
                   {lastUpdate.toLocaleTimeString('pt-PT')}
                 </p>
@@ -91,10 +91,10 @@ export function Dashboard() {
           <div className="mb-6 bg-red-50 border-2 border-red-200 rounded-lg p-4 flex items-start gap-3">
             <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-red-900">Erro ao carregar dados</h3>
+              <h3 className="font-semibold text-red-900">S'ha produït un error en carregar les dades</h3>
               <p className="text-sm text-red-700">{error}</p>
               <p className="text-xs text-red-600 mt-2">
-                Certifique-se que o backend está a correr em {import.meta.env.VITE_API_URL || 'http://localhost:3000'}
+                Assegureu-vos que el backend estigui en funcionament {import.meta.env.VITE_API_URL || 'http://localhost:3000'}
               </p>
             </div>
           </div>
@@ -102,17 +102,17 @@ export function Dashboard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Leituras Totais</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Lectures totals</h3>
             <p className="text-3xl font-bold text-blue-600">{consumption.length}</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Anomalias Ativas</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Anomalies actives</h3>
             <p className="text-3xl font-bold text-orange-600">{anomalies.length}</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Zonas Críticas</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Zones Crítiques</h3>
             <p className="text-3xl font-bold text-red-600">
               {incidents.filter(i => i.status === 'critical').length}
             </p>

@@ -18,7 +18,7 @@ export function WaterPulse({ data }) {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <Activity className="w-6 h-6 text-blue-600" />
-          <h2 className="text-xl font-bold text-gray-800">Pulso de Água</h2>
+          <h2 className="text-xl font-bold text-gray-800">Pols d'aigua</h2>
         </div>
 
         <select
@@ -36,11 +36,11 @@ export function WaterPulse({ data }) {
 
       <div className="mb-4 grid grid-cols-2 gap-4">
         <div className="bg-blue-50 rounded-lg p-4">
-          <p className="text-sm text-gray-600">Média de Consumo</p>
+          <p className="text-sm text-gray-600">Mèdia de Consum</p>
           <p className="text-2xl font-bold text-blue-600">{avgLiters.toFixed(0)}L</p>
         </div>
         <div className="bg-blue-50 rounded-lg p-4">
-          <p className="text-sm text-gray-600">Pico Máximo</p>
+          <p className="text-sm text-gray-600">Pic Màxim</p>
           <p className="text-2xl font-bold text-blue-600">{maxLiters}L</p>
         </div>
       </div>
