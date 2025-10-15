@@ -1,13 +1,7 @@
-import './index.css';
+import { Dashboard } from './components/Dashboard';
 
 function App() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-primary text-white">
-      <h1 className="text-5xl font-bold drop-shadow-lg">
-        Tailwind funcionando 
-      </h1>
-    </div>
-  );
+  return <Dashboard />;
 }
 
 export default App;
