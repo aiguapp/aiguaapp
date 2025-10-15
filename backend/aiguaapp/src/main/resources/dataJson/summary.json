@@ -1,0 +1,62 @@
+[
+  {
+    "neighborhood": "Sants-Montjuic",
+    "totalLiters": 240.8,
+    "percentageOfCity": 14.54,
+    "mainUsageType": "industrial"
+  },
+  {
+    "neighborhood": "Eixample",
+    "totalLiters": 210.0,
+    "percentageOfCity": 12.68,
+    "mainUsageType": "industrial"
+  },
+  {
+    "neighborhood": "Les Corts",
+    "totalLiters": 190.7,
+    "percentageOfCity": 11.52,
+    "mainUsageType": "industrial"
+  },
+  {
+    "neighborhood": "Ciutat Vella",
+    "totalLiters": 180.1,
+    "percentageOfCity": 10.88,
+    "mainUsageType": "domestic"
+  },
+  {
+    "neighborhood": "Sant Marti",
+    "totalLiters": 165.2,
+    "percentageOfCity": 9.98,
+    "mainUsageType": "domestic"
+  },
+  {
+    "neighborhood": "Sant Andreu",
+    "totalLiters": 160.0,
+    "percentageOfCity": 9.66,
+    "mainUsageType": "industrial"
+  },
+  {
+    "neighborhood": "Gracia",
+    "totalLiters": 140.5,
+    "percentageOfCity": 8.49,
+    "mainUsageType": "domestic"
+  },
+  {
+    "neighborhood": "Horta-Guinardo",
+    "totalLiters": 132.6,
+    "percentageOfCity": 8.01,
+    "mainUsageType": "domestic"
+  },
+  {
+    "neighborhood": "Sarria-Sant Gervasi",
+    "totalLiters": 125.3,
+    "percentageOfCity": 7.57,
+    "mainUsageType": "domestic"
+  },
+  {
+    "neighborhood": "Nou Barris",
+    "totalLiters": 110.4,
+    "percentageOfCity": 6.67,
+    "mainUsageType": "domestic"
+  }
+]
