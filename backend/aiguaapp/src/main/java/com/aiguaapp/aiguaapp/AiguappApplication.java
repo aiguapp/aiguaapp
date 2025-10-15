@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EntityScan(basePackages = "com.aiguaapp.baaiguaappckend")
+@EntityScan(basePackages = "com.aiguaapp.aiguaapp")
 public class AiguappApplication {
 
 	public static void main(String[] args) {
