@@ -1,62 +1,65 @@
 [
   {
+    "id": 1,
     "neighborhood": "Gracia",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 140.5,
-    "usage_type": "domestic"
+    "type": "leak",
+    "severity": "high",
+    "liters": 512.4,
+    "deviation": 24,
+    "timestamp": "2025-10-15T03:00"
   },
   {
+    "id": 2,
     "neighborhood": "Eixample",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 210.0,
-    "usage_type": "industrial"
+    "type": "spike",
+    "severity": "medium",
+    "liters": 390.8,
+    "deviation": 15,
+    "timestamp": "2025-10-15T04:00"
   },
   {
-    "neighborhood": "Sant Marti",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 165.2,
-    "usage_type": "domestic"
-  },
-  {
+    "id": 3,
     "neighborhood": "Ciutat Vella",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 180.1,
-    "usage_type": "domestic"
+    "type": "spike",
+    "severity": "high",
+    "liters": 470.2,
+    "deviation": 27,
+    "timestamp": "2025-10-15T02:30"
   },
   {
-    "neighborhood": "Les Corts",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 190.7,
-    "usage_type": "industrial"
-  },
-  {
-    "neighborhood": "Sarria-Sant Gervasi",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 125.3,
-    "usage_type": "domestic"
-  },
-  {
+    "id": 4,
     "neighborhood": "Sants-Montjuic",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 240.8,
-    "usage_type": "industrial"
+    "type": "drop",
+    "severity": "medium",
+    "liters": 48.9,
+    "deviation": -12,
+    "timestamp": "2025-10-15T05:00"
   },
   {
+    "id": 5,
     "neighborhood": "Nou Barris",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 110.4,
-    "usage_type": "domestic"
+    "type": "spike",
+    "severity": "low",
+    "liters": 355.6,
+    "deviation": 8,
+    "timestamp": "2025-10-15T06:00"
   },
   {
-    "neighborhood": "Horta-Guinardo",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 132.6,
-    "usage_type": "domestic"
+    "id": 6,
+    "neighborhood": "Les Corts",
+    "type": "leak",
+    "severity": "high",
+    "liters": 530.1,
+    "deviation": 30,
+    "timestamp": "2025-10-15T01:45"
   },
   {
-    "neighborhood": "Sant Andreu",
-    "date_time": "2025-10-15T08:00",
-    "consumption_liters": 160.0,
-    "usage_type": "industrial"
+    "id": 7,
+    "neighborhood": "Sant Marti",
+    "type": "drop",
+    "severity": "low",
+    "liters": 60.3,
+    "deviation": -7,
+    "timestamp": "2025-10-15T07:30"
   }
 ]
