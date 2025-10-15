@@ -1,4 +1,4 @@
-package com.repte.backend;
+package com.aiguaapp.aiguaapp;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
