@@ -27,7 +27,17 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 - 🌦️ Contextualitzar el consum amb dades meteorològiques (pluja i temperatura).
 - 📧 Enviar notificacions o informes periòdics (simulats).
 
+### 🖥️ Vista d’escriptori  
+<p align="center">
+  <img src="./src/assets/Imagen12.png" alt="AiguaMap - Vista d'escriptori" width="800"/>
+</p>
+
 ---
+
+### 📱 Vista mòbil  
+<p align="center">
+  <img src="./src/assets/Imagen11.png" alt="AiguaMap - Vista mòbil" width="350"/>
+</p>
 
 ## 💡 Solució proposada
 
@@ -87,42 +97,11 @@ Desenvolupar una **aplicació web interactiva** que permeti:
 | Mapa | **Leaflet.js** | Visualització geogràfica de barris i anomalies |
 | Icons | **Lucide-react** | Iconografia moderna i vectorial |
 | Dades | **JSON-server / Mock API** | Simulació de backend amb dades reals o falses |
-| Visuals | **Chart.js (opcional)** | Gràfics per a informes i estadístiques |
+| Visuals | **Chart.js  | Gràfics per a informes i estadístiques |
 
 ---
 
-## 🖥️ Frontend (React + Tailwind + Leaflet)
 
-📸 *Afegeix aquí les teves captures de pantalla del front:*
-
-- **Pantalla principal / Dashboard**
-  <!-- 📸 -->  
-  *(inserta aquí la captura del dashboard complet)*
-
-- **Mapa de Barcelona amb alertes**
-  <!-- 📸 -->  
-  *(inserta aquí la captura del mapa Leaflet amb els punts de color)*
-
-- **Detall del popup / tooltip**
-  <!-- 📸 -->  
-  *(inserta aquí la captura del popup amb consum i desviació)*
-
-- **Alertes o estadístiques addicionals**
-  <!-- 📸 -->  
-  *(inserta aquí la captura del llistat o gràfic d’anomalies)*
-
----
-
-## 🧮 Dades utilitzades
-
-| Font | Descripció |
-|------|-------------|
-| `summary.json` | Resum del consum total per barri i tipus d’ús |
-| `consumption.json` | Registre horari amb anomalies simulades (fugues, pics, etc.) |
-| `AEMET` (simulada) | Dades de pluja i temperatura |
-| `ACA` / `Aigües de Barcelona` | Dades reals potencials per a futur |
-
----
 
 🏗️ Frameworks i llibreries utilitzades
 
